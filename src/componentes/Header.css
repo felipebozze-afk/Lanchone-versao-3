@@ -1,0 +1,58 @@
+.titulo {
+  background-color: red;
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.titulo h1 {
+  color: white;
+}
+
+.titulo h2 {
+  color: white;
+}
+
+.carrinho {
+  align-items: center;
+  color: white;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.navegacao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.navegacao button {
+  background: white;
+  border: 0;
+  border-radius: 5px;
+  color: rgb(236, 7, 7);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 8px 12px;
+}
+
+.carrinho button,
+.adicionar-carrinho {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: rgb(236, 7, 7);
+  cursor: pointer;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.carrinho button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}

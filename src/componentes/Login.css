@@ -1,0 +1,29 @@
+.login {
+  background-color: white;
+  border: 2px solid rgb(228, 12, 12);
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  width: 300px;
+  color: blue;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.container input {
+  padding: 10px;
+}
+
+.container button {
+  background-color: rgb(6, 10, 226);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}

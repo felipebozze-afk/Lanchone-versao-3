@@ -1,0 +1,160 @@
+.app {
+  background-color: white;
+  min-height: 100vh;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.product-item {
+  background-color: white;
+  border: 2px solid rgba(248, 6, 6, 0.11);
+  border-radius: 10px;
+  padding: 15px;
+  width: 160px;
+}
+
+.product-name {
+  color: rgb(236, 7, 7);
+  margin: 0;
+}
+
+.product-price {
+  color: rgb(14, 28, 223);
+  font-weight: bold;
+}
+
+.product-category {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.adicionar-carrinho {
+  background-color: rgb(240, 8, 8);
+  color: white;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.contador {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+}
+
+.contador p {
+  margin: 0;
+}
+
+.contador-botoes {
+  display: flex;
+  gap: 8px;
+}
+
+.contador button {
+  background-color: rgb(240, 8, 8);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.contador span {
+  font-weight: bold;
+}
+
+.employee-section {
+  background-color: white;
+  border: 2px solid rgb(238, 149, 149);
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 15px;
+  width: 300px;
+}
+
+.employee-name {
+  font-weight: bold;
+}
+
+.employee-role {
+  color: black;
+}
+
+.resumo-pedido {
+  background-color: white;
+  border: 2px solid rgba(248, 6, 6, 0.11);
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 15px;
+  width: 320px;
+}
+
+.resumo-pedido h2 {
+  color: rgb(236, 7, 7);
+  margin-top: 0;
+}
+
+.resumo-pedido p {
+  color: black;
+  margin: 8px 0;
+}
+
+.resumo-pedido h3 {
+  color: rgb(14, 28, 223);
+  margin-bottom: 0;
+}
+
+.pagina-login {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.pagina-carrinho {
+  margin: 24px auto;
+  max-width: 780px;
+  padding: 0 18px;
+}
+
+.item-carrinho {
+  align-items: center;
+  border-bottom: 1px solid #dedede;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 80px 1fr auto auto;
+  padding: 14px 0;
+  text-align: left;
+}
+
+.item-carrinho img { border-radius: 8px; height: 60px; object-fit: cover; width: 80px; }
+.item-carrinho h3 { margin: 0; }
+.quantidade-carrinho { align-items: center; display: flex; gap: 8px; }
+.quantidade-carrinho button, .acoes-carrinho button, .status-pedido button { cursor: pointer; padding: 8px 12px; }
+.total-carrinho { color: rgb(14, 28, 223); font-size: 1.25rem; font-weight: bold; margin: 20px 0; text-align: right; }
+.acoes-carrinho { display: flex; gap: 12px; justify-content: flex-end; }
+
+.painel-pedido { background: #27272a; margin: 24px auto; max-width: 780px; padding: 24px; }
+.pedido-cozinha { background: white; border-left: 7px solid #d97706; border-radius: 8px; margin: auto; max-width: 520px; padding: 22px; text-align: left; }
+.pedido-cozinha header { border-bottom: 1px dashed #aaa; }
+.pedido-cozinha header h3 { color: red; margin: 0; }
+.pedido-cozinha ul { list-style: none; padding: 8px 0; }
+.pedido-cozinha li { border-bottom: 1px solid #eee; padding: 9px 0; }
+.pedido-cozinha span { color: #d97706; font-weight: bold; }
+.status-pedido { display: grid; gap: 10px; grid-template-columns: repeat(4, 1fr); margin-top: 20px; }
+.status-pedido button { background: #59616b; border: 2px solid transparent; color: white; }
+.status-pedido button.ativo { border-color: white; background: #d97706; }
+
+@media (max-width: 620px) {
+  .item-carrinho { grid-template-columns: 64px 1fr; }
+  .item-carrinho img { width: 64px; }
+  .status-pedido { grid-template-columns: repeat(2, 1fr); }
+}
