@@ -1,10 +1,24 @@
 import { useState } from "react";
 import Header from "../componentes/Header";
 
-function Pedido({ lanches, quantidades, quantidadeCarrinho, aoNavegar }) {
+function Pedido({ lanches, quantidades, quantidadeCarrinho, aoNavegar, limparCarrinho }) {
   const [status, setStatus] = useState("Recebido");
   const itens = lanches.filter((lanche) => quantidades[lanche.id] > 0);
   const estados = ["Recebido", "Preparando", "Pronto", "Entregue"];
+
+  function atualizarStatus(estado) {
+    if (estado === "Entregue" && itens.length > 0) {
+      const pedidoEntregue = window.confirm("Confirma que o pedido foi entregue?");
+
+      if (!pedidoEntregue) return;
+
+      setStatus(estado);
+      limparCarrinho();
+      return;
+    }
+
+    setStatus(estado);
+  }
 
   return (
     <div className="app">
@@ -20,7 +34,7 @@ function Pedido({ lanches, quantidades, quantidadeCarrinho, aoNavegar }) {
         </article>
         <div className="status-pedido">
           {estados.map((estado) => (
-            <button className={status === estado ? "ativo" : ""} key={estado} onClick={() => setStatus(estado)}>{estado}</button>
+            <button className={status === estado ? "ativo" : ""} key={estado} onClick={() => atualizarStatus(estado)}>{estado}</button>
           ))}
         </div>
       </section>

@@ -1,8 +1,15 @@
 .app {
-  background-color: white;
+  background-image: url("/Imagens/fachada lanchonete.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  margin-left: calc(50% - 50vw);
   min-height: 100vh;
   padding-bottom: 30px;
   text-align: center;
+  width: 100vw;
 }
 
 .produtos {
@@ -115,23 +122,36 @@
 }
 
 .pagina-login {
+  background-image: url("/Imagens/fachada lanchonete.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  margin-left: calc(50% - 50vw);
   min-height: 100vh;
   padding-top: 80px;
+  width: 100vw;
 }
 
 .pagina-carrinho {
+  background-color: rgba(255, 255, 255, 0.94);
+  border-radius: 12px;
   margin: 24px auto;
   max-width: 780px;
-  padding: 0 18px;
+  padding: 18px;
 }
 
 .item-carrinho {
   align-items: center;
-  border-bottom: 1px solid #dedede;
+  background-color: white;
+  border: 1px solid #dedede;
+  border-radius: 10px;
   display: grid;
   gap: 14px;
   grid-template-columns: 80px 1fr auto auto;
-  padding: 14px 0;
+  margin-bottom: 12px;
+  padding: 14px;
   text-align: left;
 }
 
@@ -142,7 +162,7 @@
 .total-carrinho { color: rgb(14, 28, 223); font-size: 1.25rem; font-weight: bold; margin: 20px 0; text-align: right; }
 .acoes-carrinho { display: flex; gap: 12px; justify-content: flex-end; }
 
-.painel-pedido { background: #27272a; margin: 24px auto; max-width: 780px; padding: 24px; }
+.painel-pedido { background: rgba(255, 255, 255, 0.9); margin: 24px auto; max-width: 780px; padding: 24px; }
 .pedido-cozinha { background: white; border-left: 7px solid #d97706; border-radius: 8px; margin: auto; max-width: 520px; padding: 22px; text-align: left; }
 .pedido-cozinha header { border-bottom: 1px dashed #aaa; }
 .pedido-cozinha header h3 { color: red; margin: 0; }

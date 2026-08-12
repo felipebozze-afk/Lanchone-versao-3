@@ -37,7 +37,7 @@ function App() {
   function adicionarAoCarrinho(lanche) {
     const novaQuantidade = quantidades[lanche.id] + 1;
     alterarQuantidade(lanche.id, 1);
-    alert(`${novaQuantidade} ${lanche.nome} adicionado ao carrinho`);
+    setTimeout(() => alert(`${novaQuantidade} ${lanche.nome} adicionado ao carrinho`), 0);
   }
 
   function limparCarrinho() {
@@ -66,7 +66,7 @@ function App() {
   }
 
   if (pagina === "pedido") {
-    return <Pedido {...propriedadesComuns} lanches={lanches} quantidades={quantidades} />;
+    return <Pedido {...propriedadesComuns} lanches={lanches} quantidades={quantidades} limparCarrinho={limparCarrinho} />;
   }
 
   return (
