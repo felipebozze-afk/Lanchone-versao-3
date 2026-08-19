@@ -15,6 +15,11 @@
   color: white;
 }
 
+.saudacao {
+  color: blue;
+  font-size: 1.25rem;
+}
+
 .carrinho {
   align-items: center;
   color: white;

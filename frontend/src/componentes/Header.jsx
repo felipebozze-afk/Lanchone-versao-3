@@ -5,6 +5,8 @@ function Header({ titulo, subtitulo, quantidadeCarrinho, limparCarrinho, aoNaveg
     <div className="titulo">
       <h1>{titulo}</h1>
       <h2>{subtitulo}</h2>
+      {localStorage.getItem("usuario") === "cliente" && <p className="saudacao">Olá cliente</p>}
+      {localStorage.getItem("usuario") === "admin" && <p className="saudacao">Olá admin</p>}
       <nav className="navegacao">
         <button onClick={() => aoNavegar("home")}>Cardápio</button>
         <button onClick={() => aoNavegar("carrinho")}>Carrinho ({quantidadeCarrinho})</button>
