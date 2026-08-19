@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Carrinho from "./pages/Carrinho";
@@ -17,7 +18,7 @@ const lanches = [
 ];
 
 function App() {
-  const [pagina, setPagina] = useState("login");
+  const navigate = useNavigate();
   const [quantidades, setQuantidades] = useState(() =>
     Object.fromEntries(lanches.map((lanche) => [lanche.id, 0])),
   );
@@ -44,40 +45,46 @@ function App() {
     setQuantidades(Object.fromEntries(lanches.map((lanche) => [lanche.id, 0])));
   }
 
-  if (pagina === "login") {
-    return <Login aoEntrar={() => setPagina("home")} />;
-  }
-
   const propriedadesComuns = {
-    aoNavegar: setPagina,
+    aoNavegar: (pagina) => navigate(`/${pagina}`),
     quantidadeCarrinho,
   };
 
-  if (pagina === "carrinho") {
-    return (
-      <Carrinho
-        {...propriedadesComuns}
-        lanches={lanches}
-        quantidades={quantidades}
-        alterarQuantidade={alterarQuantidade}
-        limparCarrinho={limparCarrinho}
-      />
-    );
-  }
-
-  if (pagina === "pedido") {
-    return <Pedido {...propriedadesComuns} lanches={lanches} quantidades={quantidades} limparCarrinho={limparCarrinho} />;
-  }
-
   return (
-    <Home
-      {...propriedadesComuns}
-      lanches={lanches}
-      quantidades={quantidades}
-      alterarQuantidade={alterarQuantidade}
-      adicionarAoCarrinho={adicionarAoCarrinho}
-      limparCarrinho={limparCarrinho}
-    />
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/login" element={<Login aoEntrar={navigate} />} />
+      <Route
+        path="/home"
+        element={
+          <Home
+            {...propriedadesComuns}
+            lanches={lanches}
+            quantidades={quantidades}
+            alterarQuantidade={alterarQuantidade}
+            adicionarAoCarrinho={adicionarAoCarrinho}
+            limparCarrinho={limparCarrinho}
+          />
+        }
+      />
+      <Route
+        path="/carrinho"
+        element={
+          <Carrinho
+            {...propriedadesComuns}
+            lanches={lanches}
+            quantidades={quantidades}
+            alterarQuantidade={alterarQuantidade}
+            limparCarrinho={limparCarrinho}
+          />
+        }
+      />
+      <Route
+        path="/pedido"
+        element={<Pedido {...propriedadesComuns} lanches={lanches} quantidades={quantidades} limparCarrinho={limparCarrinho} />}
+      />
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
   );
 }
 
